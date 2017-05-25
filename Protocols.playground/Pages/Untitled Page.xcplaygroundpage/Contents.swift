@@ -92,11 +92,19 @@ pay(employee: employee)
 
 //Loosely Related Types
 
-class Fruit {
+protocol Blendable {
+    func blend()
+}
+
+class Fruit: Blendable {
     var name: String
     
     init(name: String) {
         self.name = name
+    }
+    
+    func blend() {
+        print("I'm mush!")
     }
 }
 
@@ -110,5 +118,22 @@ class Dairy {
 
 class Cheese: Dairy {}
 
-class Milk: Dairy {}
+class Milk: Dairy, Blendable {
+    func blend() {
+        print("I haven't changed much at all!")
+    }
+}
+
+func makeSmoothie(with ingredients: [Blendable]) {
+    for ingredient in ingredients {
+        ingredient.blend()
+    }
+}
+
+let strawberry = Fruit(name: "Strawberry")
+let cheddar = Cheese(name: "Cheddar")
+let chocolateMilk = Milk(name: "Chocolate")
+
+let ingredients: [Blendable] = [strawberry, chocolateMilk]
+makeSmoothie(with: ingredients)
 
