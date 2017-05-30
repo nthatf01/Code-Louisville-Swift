@@ -16,12 +16,13 @@ class ViewController: UIViewController {
     
     let questionProvider = QuestionProvider()
     var currentQuestion: Question = Question("", [""])
+    var questionNumber: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         currentQuestion = questionProvider.randomQuestion()
-        questionLabel.text = currentQuestion.clue
+        questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
         
     }
 
@@ -29,7 +30,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func answerQuestion(_ sender: UIButton) {
+        
+        currentQuestion = questionProvider.randomQuestion()
+        questionNumber += 1
+        questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
+        
+    }
 
 }
 
