@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  QuickRecall
 //
-//  Created by Alyssia Higgs on 5/29/17.
+//  Created by Nathaniel Hatfield on 5/29/17.
 //  Copyright © 2017 Nathaniel Hatfield. All rights reserved.
 //
 

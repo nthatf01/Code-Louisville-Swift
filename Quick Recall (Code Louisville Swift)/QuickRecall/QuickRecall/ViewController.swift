@@ -10,9 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet weak var answerButton: UIButton!
+    
+    let questionProvider = QuestionProvider()
+    var currentQuestion: Question = Question("", [""])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        currentQuestion = questionProvider.randomQuestion()
+        questionLabel.text = currentQuestion.clue
+        
     }
 
     override func didReceiveMemoryWarning() {

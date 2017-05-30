@@ -9,7 +9,7 @@
 import Foundation
 import GameKit
 
-struct Question {
+class Question {
     let clue: String
     var answers: [String] = []
     
