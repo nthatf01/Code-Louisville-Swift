@@ -16,12 +16,16 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var answerButton: UIButton!
     
     @IBOutlet weak var microphoneButton: UIButton!
-    //@IBOutlet weak var textView: UITextView!
+    
     @IBOutlet weak var textView: UITextView!
-  
+    
+    @IBOutlet weak var correctOrIncorrectLabel: UILabel!
+    
     let questionProvider = QuestionProvider()
     var currentQuestion: Question = Question("", [""])
     var questionNumber: Int = 1
+    var playerAnswer = ""
+    
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
@@ -127,7 +131,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             if result != nil {
                 
                 self.textView.text = result?.bestTranscription.formattedString
+                self.playerAnswer = self.textView.text
                 isFinal = (result?.isFinal)!
+                
+                switch self.currentQuestion.checkAnswer(for: self.playerAnswer) {
+                case true: self.correctOrIncorrectLabel.text = "Correct!"
+                case false:self.correctOrIncorrectLabel.text = "Incorrect"
+                }
+                
             }
             
             if error != nil || isFinal {
@@ -154,7 +165,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             print("audioEngine couldn't start because of an error.")
         }
         
-        textView.text = "Say something, I'm listening!"
+        textView.text = "Please speak your answer!"
         
     }
     
