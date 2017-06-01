@@ -99,6 +99,7 @@
 				TargetAttributes = {
 					39091B161EDD140B00742477 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = B59RR7NQXN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -264,8 +265,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B59RR7NQXN;
 				INFOPLIST_FILE = QuickRecall/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nthatfield.QuickRecall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -277,8 +279,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B59RR7NQXN;
 				INFOPLIST_FILE = QuickRecall/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nthatfield.QuickRecall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,6 +308,7 @@
 				39091B2B1EDD140C00742477 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -16,6 +16,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var answerButton: UIButton!
     
     @IBOutlet weak var microphoneButton: UIButton!
+    //@IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textView: UITextView!
   
     let questionProvider = QuestionProvider()
@@ -76,6 +77,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
         
     }
+    
+    
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         if audioEngine.isRunning {

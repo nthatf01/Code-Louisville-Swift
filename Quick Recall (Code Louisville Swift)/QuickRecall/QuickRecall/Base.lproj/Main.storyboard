@@ -37,11 +37,6 @@
                                     <action selector="answerQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SdD-Wo-YGs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbB-1Z-K1p" userLabel="microphoneButton">
-                                <rect key="frame" x="192" y="335" width="138" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Microphone Button"/>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9KR-Yz-otS" userLabel="textView">
                                 <rect key="frame" x="54" y="175" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -50,6 +45,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbB-1Z-K1p" userLabel="microphoneButton">
+                                <rect key="frame" x="137" y="425" width="138" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Microphone Button"/>
+                                <connections>
+                                    <action selector="microphoneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oxa-Hc-RdF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -57,6 +60,7 @@
                         <outlet property="answerButton" destination="AuT-OF-ew7" id="9re-j9-D44"/>
                         <outlet property="microphoneButton" destination="QbB-1Z-K1p" id="ovs-ZM-oZ8"/>
                         <outlet property="questionLabel" destination="mcE-rt-vGL" id="zqF-rq-oLl"/>
+                        <outlet property="textView" destination="9KR-Yz-otS" id="F2m-rM-X0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
