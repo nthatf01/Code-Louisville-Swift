@@ -38,7 +38,7 @@ struct QuestionProvider {
         Question("What body of water is the arm of the Arabian Sea lying between Iran and Arabia? This body of water can be entered from the Gulf of Oman through the Strait of Hormuz.", ["PERSIAN GULF"]),
         Question("First and last names, please. Give the pen name of the author of Life on the Mississippi, The Adventures of Tom Sawyer, and The Adventures of Huckleberry Finn.", ["MARK TWAIN"]),
         Question("A certain unknown angle has a supplementary angle that measures 100 degrees. What is the measure of the unknown angle?", ["80 DEGREES", "EIGHTY DEGREES"]),
-        Question("What was the name of the international organization founded after World War I that was a forerunner of the United Nations?", ["LEAGE OF NATIONS", "THE LEAGUE OF NATIONS"]),
+        Question("What was the name of the international organization founded after World War I that was a forerunner of the United Nations?", ["LEAGUE OF NATIONS", "THE LEAGUE OF NATIONS"]),
         Question("Identify the American butterfly remarkable not only for its size and coloration, but for its ability to undertake long migrations.", ["MONARCH", "MONARCH BUTTERFLY", "MONARCH BUTTERFLIES"]),
         Question("World War I was known as The Great War, or The World War, until what event occurred?", ["WORLD WAR II", "WWII", "WORLD WAR TWO"]),
         Question("Paganini was a great Italian composer and musician. Name either of the two musical instruments on which he excelled.", ["PIANO", "VIOLIN"])
