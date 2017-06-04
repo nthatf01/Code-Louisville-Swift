@@ -18,11 +18,30 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var quantityStepper: UIStepper!
+    
+    
+    let vendingMachine: VendingMachine
+    var currentSelection: VendingSelection?
+    
+    required init?(coder aDecoder: NSCoder) {
+        do {
+            let dictionary = try PlistConverter.dictionary(fromFile: "VendingInventory", ofType: "plist")
+            let inventory = try InventoryUnarchiver.vendingInventory(fromDictionary: dictionary)
+            self.vendingMachine = FoodVendingMachine(inventory: inventory)
+        } catch let error {
+            fatalError("\(error)")
+        }
+        
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setupCollectionViewCells()
+        
+        updateDisplayWith(balance: vendingMachine.amountDeposited, totalPrice: 0, itemPrice: 0, itemQuantity: 1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,14 +66,96 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.collectionViewLayout = layout
     }
     
+    // MARK: - Vending Machine
+    
+    @IBAction func purchase() {
+        if let currentSelection = currentSelection {
+            do {
+                try vendingMachine.vend(selection: currentSelection, quantity: Int(quantityStepper.value))
+                updateDisplayWith(balance: vendingMachine.amountDeposited, totalPrice: 0.0, itemPrice: 0, itemQuantity: 1)
+            } catch VendingMachineError.outOfStock {
+                showAlertWith(title: "Out of Stock", message: "This item is unavailable. Please make another selection")
+            } catch VendingMachineError.invalidSelection {
+                showAlertWith(title: "Invalid Selection", message: "Please make another selection")
+            } catch VendingMachineError.insufficientFunds(let required) {
+                let message = "You need $\(required) to complete the transaction"
+                showAlertWith(title: "Insufficient Funds", message: message)
+            } catch let error {
+                fatalError("\(error)")
+            }
+            
+            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                collectionView.deselectItem(at: indexPath, animated: true)
+                updateCell(having: indexPath, selected: false)
+            }
+            
+        } else {
+            // FIXME: Alert user to no selection
+        }
+    }
+    
+    func updateDisplayWith(balance: Double? = nil, totalPrice: Double? = nil, itemPrice: Double? = nil, itemQuantity: Int? = nil) {
+        
+        if let balanceValue = balance {
+            balanceLabel.text = "$\(balanceValue)"
+        }
+        
+        if let totalValue = totalPrice {
+            totalLabel.text = "$\(totalValue)"
+        }
+        
+        if let priceValue = itemPrice {
+            priceLabel.text = "$\(priceValue)"
+        }
+        
+        if let quantityValue = itemQuantity {
+            quantityLabel.text = "\(quantityValue)"
+        }
+    }
+    
+    func updateTotalPrice(for item: VendingItem) {
+        let totalPrice = item.price * quantityStepper.value
+        updateDisplayWith(totalPrice: totalPrice)
+    }
+    
+    @IBAction func updateQuantity(_ sender: UIStepper) {
+        let quantity = Int(quantityStepper.value)
+        updateDisplayWith(itemQuantity: quantity)
+        
+        if let currentSelection = currentSelection, let item = vendingMachine.item(forSelection: currentSelection) {
+            updateTotalPrice(for: item)
+        }
+    }
+    
+    func showAlertWith(title: String, message: String, style: UIAlertControllerStyle = .alert) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: dismissAlert)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func dismissAlert(sender: UIAlertAction) -> Void {
+        updateDisplayWith(balance: 0, totalPrice: 0, itemPrice: 0, itemQuantity: 1)
+    }
+    
+    @IBAction func depositFunds() {
+        vendingMachine.deposit(5.0)
+        updateDisplayWith(balance: vendingMachine.amountDeposited)
+    }
+    
     // MARK: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return vendingMachine.selection.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? VendingItemCell else { fatalError() }
+        
+        let item = vendingMachine.selection[indexPath.row]
+        cell.iconView.image = item.icon()
         
         return cell
     }
@@ -63,6 +164,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         updateCell(having: indexPath, selected: true)
+        
+        quantityStepper.value = 1
+        updateDisplayWith(totalPrice: 0, itemQuantity: 1)
+        
+        currentSelection = vendingMachine.selection[indexPath.row]
+        
+        if let currentSelection = currentSelection, let item = vendingMachine.item(forSelection: currentSelection) {
+            let totalPrice = item.price * quantityStepper.value
+            updateDisplayWith(totalPrice: totalPrice, itemPrice: item.price)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

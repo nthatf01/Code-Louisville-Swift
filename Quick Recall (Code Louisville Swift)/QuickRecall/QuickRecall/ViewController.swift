@@ -12,13 +12,9 @@ import Speech
 class ViewController: UIViewController, SFSpeechRecognizerDelegate {
 
     @IBOutlet weak var questionLabel: UILabel!
-    
     @IBOutlet weak var answerButton: UIButton!
-    
     @IBOutlet weak var microphoneButton: UIButton!
-    
     @IBOutlet weak var textView: UITextView!
-    
     @IBOutlet weak var correctOrIncorrectLabel: UILabel!
     
     let questionProvider = QuestionProvider()
