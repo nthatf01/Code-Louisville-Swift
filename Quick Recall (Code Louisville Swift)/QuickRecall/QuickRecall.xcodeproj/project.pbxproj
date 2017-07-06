@@ -13,6 +13,7 @@
 		39091B221EDD140C00742477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39091B211EDD140C00742477 /* Assets.xcassets */; };
 		39091B251EDD140C00742477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39091B231EDD140C00742477 /* LaunchScreen.storyboard */; };
 		39091B2D1EDD177D00742477 /* QuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39091B2C1EDD177D00742477 /* QuestionProvider.swift */; };
+		391FC4DF1F0EFDF500960A28 /* MicrophoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391FC4DE1F0EFDF500960A28 /* MicrophoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		39091B241EDD140C00742477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39091B261EDD140C00742477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39091B2C1EDD177D00742477 /* QuestionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionProvider.swift; sourceTree = "<group>"; };
+		391FC4DE1F0EFDF500960A28 /* MicrophoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				39091B1A1EDD140C00742477 /* AppDelegate.swift */,
 				39091B1C1EDD140C00742477 /* ViewController.swift */,
 				39091B1E1EDD140C00742477 /* Main.storyboard */,
+				391FC4DE1F0EFDF500960A28 /* MicrophoneViewController.swift */,
 				39091B211EDD140C00742477 /* Assets.xcassets */,
 				39091B231EDD140C00742477 /* LaunchScreen.storyboard */,
 				39091B261EDD140C00742477 /* Info.plist */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				391FC4DF1F0EFDF500960A28 /* MicrophoneViewController.swift in Sources */,
 				39091B1D1EDD140C00742477 /* ViewController.swift in Sources */,
 				39091B2D1EDD177D00742477 /* QuestionProvider.swift in Sources */,
 				39091B1B1EDD140C00742477 /* AppDelegate.swift in Sources */,
