@@ -18,34 +18,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    fileprivate let darkSkyApiKey = "adf6d57e36957e779d7db8b6585efef9"
-
+    let client = DarkSkyAPIClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let currentWeather = CurrentWeather(temperature: 85.0, humidity: 0.8, precipitationProbability: 0.1, summary: "Hot!", icon: "clear-day")
-        let currentWeatherViewModel = CurrentWeatherViewModel(model: currentWeather)
+        let coordinate = Coordinate(latitude: 38.237048, longitude: -85.752974)
         
-        displayWeather(using: currentWeatherViewModel)
-        
-        let base = URL(string: "https://api.darksky.net/forecast/\(darkSkyApiKey)/")
-        guard let forecastUrl = URL(string: "37.8267,-122.4233", relativeTo: base) else { return }
-        
-        let configuration = URLSessionConfiguration.default
-        let session = URLSession(configuration: configuration)
-        
-        let request = URLRequest(url: forecastUrl)
-        
-        print("Log before request on main thread")
-        
-        let dataTask = session.dataTask(with: request) { data, response, error in
-            print("Log inside completion handler")
+        client.getCurrentWeather(at: coordinate) { currentWeather, error in
+            print(currentWeather)
+            print(error)
         }
-        
-        dataTask.resume()
-        
-        print("Log after resume")
         
     }
 
