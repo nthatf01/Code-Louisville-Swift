@@ -79,8 +79,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         questionNumber += 1
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
         
-        startTimer()
-        
     }
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
@@ -89,9 +87,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
             microphoneButton.setTitle("Start Recording", for: .normal)
+            endTimer()
         } else {
             startRecording()
             microphoneButton.setTitle("Stop Recording", for: .normal)
+            startTimer()
         }
     }
     
@@ -191,6 +191,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     func endTimer() {
+        totalTime = 3
         countdownTimer.invalidate()
     }
     
