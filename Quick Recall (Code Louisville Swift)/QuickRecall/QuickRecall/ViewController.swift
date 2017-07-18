@@ -28,7 +28,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     let speechSynthesizer = AVSpeechSynthesizer()
     
-    
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -236,6 +235,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         if startButton.isHidden == false {
             startButton.isHidden = true
         }
+        
+        let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
+        
+        speechSynthesizer.speak(speechUtterance)
         
     }
     
