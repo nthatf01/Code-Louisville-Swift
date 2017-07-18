@@ -25,6 +25,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     var countdownTimer: Timer!
     var totalTime = 3
     
+    let speechSynthesizer = AVSpeechSynthesizer()
+    
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
