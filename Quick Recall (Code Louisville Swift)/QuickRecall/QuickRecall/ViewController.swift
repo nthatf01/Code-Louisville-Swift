@@ -9,7 +9,7 @@
 import UIKit
 import Speech
 
-class ViewController: UIViewController, SFSpeechRecognizerDelegate {
+class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynthesizerDelegate {
 
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerButton: UIButton!
@@ -26,7 +26,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     var countdownTimer: Timer!
     var totalTime = 3
     
-    let speechSynthesizer = AVSpeechSynthesizer()
+    enum QuestionState {
+        case beforeStarted
+        case beforeBuzzed
+        case afterBuzzed
+    }
+    
+    var practiceStarted = QuestionState.beforeStarted
+    
+    var speechSynthesizer = AVSpeechSynthesizer()
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
@@ -43,6 +51,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         microphoneButton.isEnabled = false
         speechRecognizer.delegate = self
+        speechSynthesizer.delegate = self
         SFSpeechRecognizer.requestAuthorization { (authStatus) in
             
             var isButtonEnabled = false
@@ -84,6 +93,60 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
+        
+        //speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        
+        if practiceStarted != .beforeBuzzed {
+            let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
+            
+            speechSynthesizer.speak(speechUtterance)
+            
+        }
+
+        if practiceStarted == .beforeStarted {
+            microphoneButton.setTitle("BUZZ", for: .normal)
+            
+            if questionLabel.isHidden == true {
+                questionLabel.isHidden = false
+            }
+            if startButton.isHidden == false {
+                startButton.isHidden = true
+            }
+            
+            //let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
+            
+            //speechSynthesizer.speak(speechUtterance)
+            
+            practiceStarted = .beforeBuzzed
+            return
+            
+        }
+        
+        if practiceStarted == .afterBuzzed {
+            updateQuestion()
+            
+            //let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
+            
+            //if !speechSynthesizer.isSpeaking {
+                //let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
+                //speechUtterance.rate = rate
+                //speechUtterance.pitchMultiplier = pitch
+                //speechUtterance.volume = volume
+                
+                //speechSynthesizer.speak(speechUtterance)
+            //}
+            //else{
+                
+                //speechSynthesizer.continueSpeaking()
+            //}
+            
+            //speechSynthesizer.speak(speechUtterance)
+            
+            practiceStarted = .beforeBuzzed
+            microphoneButton.setTitle("BUZZ", for: .normal)
+            return
+        }
+        
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
@@ -199,7 +262,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         audioEngine.stop()
         recognitionRequest?.endAudio()
         microphoneButton.isEnabled = false
-        microphoneButton.setTitle("BUZZ", for: .normal)
+        microphoneButton.setTitle("NEXT", for: .normal)
         if correctOrIncorrectLabel.isHidden == true {
             correctOrIncorrectLabel.isHidden = false
         }
@@ -207,7 +270,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             case true: self.correctOrIncorrectLabel.text = "Correct!"
             case false:self.correctOrIncorrectLabel.text = "Incorrect"
         }
-        updateQuestion()
+        
+        practiceStarted = QuestionState.afterBuzzed
+        //updateQuestion()
         countdownTimer.invalidate()
     }
     
@@ -222,6 +287,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         currentQuestion = questionProvider.randomQuestion()
         questionNumber += 1
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
+        
         
     }
     
@@ -241,6 +307,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         speechSynthesizer.speak(speechUtterance)
         
     }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        print("Did finish!!")
+    }
+
     
 }
 

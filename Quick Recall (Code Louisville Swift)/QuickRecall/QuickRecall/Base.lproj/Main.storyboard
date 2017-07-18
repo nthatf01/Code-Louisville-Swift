@@ -36,18 +36,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbB-1Z-K1p" userLabel="microphoneButton">
-                                <rect key="frame" x="170" y="405" width="150" height="75"/>
-                                <color key="backgroundColor" red="0.99229452393879825" green="1" blue="0.62737634153997535" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="ITJ-ch-1kh"/>
-                                    <constraint firstAttribute="height" constant="75" id="U6i-hq-FiK"/>
-                                </constraints>
-                                <state key="normal" title="BUZZ"/>
-                                <connections>
-                                    <action selector="microphoneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oxa-Hc-RdF"/>
-                                </connections>
-                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZJ-N9-9jm" userLabel="timerLabel">
                                 <rect key="frame" x="16" y="310" width="226" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -63,8 +51,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qt-eZ-9cq">
-                                <rect key="frame" x="0.0" y="200" width="320" height="59"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qt-eZ-9cq">
+                                <rect key="frame" x="0.0" y="108" width="320" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="START"/>
@@ -72,17 +60,26 @@
                                     <action selector="startPractice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ue7-0S-hlS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbB-1Z-K1p" userLabel="microphoneButton">
+                                <rect key="frame" x="0.0" y="225" width="320" height="30"/>
+                                <color key="backgroundColor" red="0.99229452393879825" green="1" blue="0.62737634153997535" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="microphoneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oxa-Hc-RdF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mcE-rt-vGL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="2a7-o6-V2u"/>
-                            <constraint firstAttribute="trailing" secondItem="QbB-1Z-K1p" secondAttribute="trailing" id="Bas-OX-vC6"/>
+                            <constraint firstItem="QbB-1Z-K1p" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="G8n-f2-HEN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mcE-rt-vGL" secondAttribute="trailing" constant="10" id="Lot-Bf-GP7"/>
                             <constraint firstItem="mcE-rt-vGL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Wm2-Lj-mwO"/>
                             <constraint firstItem="mcE-rt-vGL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="buM-m9-A4W"/>
+                            <constraint firstAttribute="trailing" secondItem="QbB-1Z-K1p" secondAttribute="trailing" id="kgq-9Z-zso"/>
                             <constraint firstItem="mcE-rt-vGL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="khu-Y7-xTD"/>
+                            <constraint firstItem="QbB-1Z-K1p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n3k-ok-18J"/>
                             <constraint firstItem="mcE-rt-vGL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qVR-cp-DTP"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QbB-1Z-K1p" secondAttribute="bottom" id="rqb-s5-gyj"/>
                         </constraints>
                     </view>
                     <connections>
