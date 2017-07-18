@@ -68,6 +68,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="startPractice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ue7-0S-hlS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,6 +89,7 @@
                         <outlet property="correctOrIncorrectLabel" destination="edO-cr-gwK" id="jEl-zD-H9K"/>
                         <outlet property="microphoneButton" destination="QbB-1Z-K1p" id="ovs-ZM-oZ8"/>
                         <outlet property="questionLabel" destination="mcE-rt-vGL" id="zqF-rq-oLl"/>
+                        <outlet property="startButton" destination="1qt-eZ-9cq" id="WJD-4x-A6D"/>
                         <outlet property="textView" destination="9KR-Yz-otS" id="F2m-rM-X0c"/>
                         <outlet property="timerLabel" destination="aZJ-N9-9jm" id="7if-M3-T5j"/>
                     </connections>

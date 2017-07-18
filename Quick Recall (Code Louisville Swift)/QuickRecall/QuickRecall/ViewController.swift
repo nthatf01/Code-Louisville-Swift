@@ -17,6 +17,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var correctOrIncorrectLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
     
     let questionProvider = QuestionProvider()
     var currentQuestion: Question = Question("", [""])
@@ -192,7 +193,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         audioEngine.stop()
         recognitionRequest?.endAudio()
         microphoneButton.isEnabled = false
-        microphoneButton.setTitle("Start Recording", for: .normal)
+        microphoneButton.setTitle("BUZZ", for: .normal)
         
         switch self.currentQuestion.checkAnswer(for: self.playerAnswer) {
             case true: self.correctOrIncorrectLabel.text = "Correct!"
@@ -215,5 +216,19 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
         
     }
+    
+    @IBAction func startPractice(_ sender: Any) {
+        if microphoneButton.isHidden == true {
+            microphoneButton.isHidden = false
+        }
+        if questionLabel.isHidden == true {
+            questionLabel.isHidden = false
+        }
+        if startButton.isHidden == false {
+            startButton.isHidden = true
+        }
+        
+    }
+    
 }
 
