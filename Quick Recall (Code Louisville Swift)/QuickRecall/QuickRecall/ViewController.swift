@@ -16,11 +16,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var correctOrIncorrectLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
     let questionProvider = QuestionProvider()
     var currentQuestion: Question = Question("", [""])
     var questionNumber: Int = 1
     var playerAnswer = ""
+    var countdownTimer: Timer!
+    var totalTime = 3
     
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
@@ -76,9 +79,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         questionNumber += 1
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
         
+        startTimer()
+        
     }
-    
-    
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         if audioEngine.isRunning {
@@ -171,6 +174,31 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         } else {
             microphoneButton.isEnabled = false
         }
+    }
+    
+    func startTimer() {
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+    
+    func updateTime() {
+        timerLabel.text = "\(timeFormatted(totalTime))"
+        
+        if totalTime != 0 {
+            totalTime -= 1
+        } else {
+            endTimer()
+        }
+    }
+    
+    func endTimer() {
+        countdownTimer.invalidate()
+    }
+    
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        //let minutes: Int = (totalSeconds / 60) % 60
+        //let hours: Int = totalSeconds / 3600
+        return String(format: "%02d", seconds)
     }
 }
 
