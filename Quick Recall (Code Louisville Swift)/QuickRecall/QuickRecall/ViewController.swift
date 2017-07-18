@@ -133,11 +133,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 self.playerAnswer = self.textView.text
                 isFinal = (result?.isFinal)!
                 
-                switch self.currentQuestion.checkAnswer(for: self.playerAnswer) {
-                case true: self.correctOrIncorrectLabel.text = "Correct!"
-                case false:self.correctOrIncorrectLabel.text = "Incorrect"
-                }
-                
             }
             
             if error != nil || isFinal {
@@ -192,6 +187,16 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     func endTimer() {
         totalTime = 3
+        audioEngine.stop()
+        recognitionRequest?.endAudio()
+        microphoneButton.isEnabled = false
+        microphoneButton.setTitle("Start Recording", for: .normal)
+        
+        switch self.currentQuestion.checkAnswer(for: self.playerAnswer) {
+            case true: self.correctOrIncorrectLabel.text = "Correct!"
+            case false:self.correctOrIncorrectLabel.text = "Incorrect"
+        }
+        updateQuestion()
         countdownTimer.invalidate()
     }
     
@@ -200,6 +205,13 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         //let minutes: Int = (totalSeconds / 60) % 60
         //let hours: Int = totalSeconds / 3600
         return String(format: "%02d", seconds)
+    }
+    
+    func updateQuestion() {
+        currentQuestion = questionProvider.randomQuestion()
+        questionNumber += 1
+        questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
+        
     }
 }
 
