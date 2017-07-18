@@ -175,6 +175,13 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     func startTimer() {
+        if timerLabel.isHidden == true {
+            timerLabel.isHidden = false
+        }
+        if textView.isHidden == true {
+            textView.isHidden = false
+        }
+        
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
@@ -194,7 +201,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         recognitionRequest?.endAudio()
         microphoneButton.isEnabled = false
         microphoneButton.setTitle("BUZZ", for: .normal)
-        
+        if correctOrIncorrectLabel.isHidden == true {
+            correctOrIncorrectLabel.isHidden = false
+        }
         switch self.currentQuestion.checkAnswer(for: self.playerAnswer) {
             case true: self.correctOrIncorrectLabel.text = "Correct!"
             case false:self.correctOrIncorrectLabel.text = "Incorrect"
