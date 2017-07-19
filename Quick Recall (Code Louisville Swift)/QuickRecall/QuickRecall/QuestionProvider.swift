@@ -44,11 +44,11 @@ struct QuestionProvider {
         Question("What is the earth's galaxy called?", ["MILKY WAY", "MILKY WAY GALAXY", "THE MILKY WAY", "THE MILKY WAY GALAXY"]),
         Question("Shakespeare wrote three basic types of plays. One category was histories. Name the other two.", ["COMEDIES AND TRAGEDIES", "TRAGEDIES AND COMEDIES", "COMEDY AND TRAGEDY", "TRAGEDY AND COMEDY"]),
         Question("These one celled organisms are used in the fermentation process of beer and wine. Name this organism which causes bread to rise.", ["YEAST"]),
-        Question("What body of water is the arm of the Arabian Sea lying between Iran and Arabia? This body of water can be entered from the Gulf of Oman through the Strait of Hormuz.", ["PERSIAN GULF"]),
+        Question("What body of water is the arm of the Arabian Sea lying between Iran and Arabia? This body of water can be entered from the Gulf of Oman through the Strait of Hormuz.", ["PERSIAN GULF", "THE PERSIAN GULF", "PERSIAN GOLF", "THE PERSIAN GOLF"]),
         Question("First and last names, please. Give the pen name of the author of Life on the Mississippi, The Adventures of Tom Sawyer, and The Adventures of Huckleberry Finn.", ["MARK TWAIN"]),
         Question("A certain unknown angle has a supplementary angle that measures 100 degrees. What is the measure of the unknown angle?", ["80 DEGREES", "EIGHTY DEGREES"]),
         Question("What was the name of the international organization founded after World War I that was a forerunner of the United Nations?", ["LEAGUE OF NATIONS", "THE LEAGUE OF NATIONS"]),
-        Question("Identify the American butterfly remarkable not only for its size and coloration, but for its ability to undertake long migrations.", ["MONARCH", "MONARCH BUTTERFLY", "MONARCH BUTTERFLIES"]),
+        Question("Identify the American butterfly remarkable not only for its size and coloration, but for its ability to undertake long migrations.", ["MONARCH", "MONARCHS", "MONARCH BUTTERFLY", "MONARCH BUTTERFLIES"]),
         Question("World War One was known as The Great War, or The World War, until what event occurred?", ["WORLD WAR II", "WWII", "WORLD WAR TWO"]),
         Question("Paganini was a great Italian composer and musician. Name either of the two musical instruments on which he excelled.", ["PIANO", "VIOLIN"]),
         Question("Nate and Miranda were tiling a square kitchen floor using tiles measuring 1 foot by 1 foot. If they used 81 tiles, what are the dimensions of the floor?", ["NINE FEET BY NINE FEET", "9' x 9'", "9 x 9", "9 BY 9"]),
@@ -58,7 +58,12 @@ struct QuestionProvider {
         Question("The atmosphere of the earth is made up of about 20 percent oxygen, 1 percent of trace gases, and 79 percent of what other gas?", ["NITROGEN"]),
         Question("Identify the ancient wind instrument on which the performer blows into a pipe leading to a windbag into which air is squeezed into reed pipes. It is most popular in Scotland.", ["BAGPIPE", "BAGPIPES"]),
         Question("What is the area of a square which has a perimeter of 4 feet?", ["ONE SQUARE FOOT", "ONE FOOT SQUARED"]),
-        Question("The Pacific and Atlantic Oceans are the two largest bodies of water on the surface of the Earth. What is the third largest body of water?", ["INDIAN OCEAN", "THE INDIAN OCEAN"])
+        Question("The Pacific and Atlantic Oceans are the two largest bodies of water on the surface of the Earth. What is the third largest body of water?", ["INDIAN OCEAN", "THE INDIAN OCEAN"]),
+        Question("Iron is an example of these substances that keep the body working correctly. They help keep teeth and bones strong and they also maintain muscles. Identify these substances.", ["MINERALS", "MINERAL"]),
+        Question("Name the highest court in the United States.", ["SUPREME COURT", "THE SUPREME COURT", "SUPREME"]),
+        Question("In what U.S. city is the Willis Tower located?", ["CHICAGO", "CHICAGO, ILLINOIS", "CHICAGO, IL"]),
+        Question("Locate the linking verb in the following sentence: Every motion is perfect.", ["IS"]),
+        Question("Arrange the following from smallest to largest: one third, one sixth, one fourth, one eighth.", ["1/8, 1/6, 1/4, 1/3", "ONE EIGHTH ONE SIXTH ONE FOURTH ONE THIRD"])
         
     ]
     
