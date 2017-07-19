@@ -51,14 +51,14 @@ struct QuestionProvider {
         Question("Identify the American butterfly remarkable not only for its size and coloration, but for its ability to undertake long migrations.", ["MONARCH", "MONARCH BUTTERFLY", "MONARCH BUTTERFLIES"]),
         Question("World War One was known as The Great War, or The World War, until what event occurred?", ["WORLD WAR II", "WWII", "WORLD WAR TWO"]),
         Question("Paganini was a great Italian composer and musician. Name either of the two musical instruments on which he excelled.", ["PIANO", "VIOLIN"]),
-        Question("Nate and Miranda were tiling a square kitchen floor using tiles measuring 1 foot by 1 foot. If they used 81 tiles, what are the dimensions of the floor?", ["NINE FEET BY NINE FEET"]),
+        Question("Nate and Miranda were tiling a square kitchen floor using tiles measuring 1 foot by 1 foot. If they used 81 tiles, what are the dimensions of the floor?", ["NINE FEET BY NINE FEET", "9' x 9'", "9 x 9", "9 BY 9"]),
         Question("How many states have the Mississippi River as part of their border?", ["10", "TEN"]),
         Question("What is one fourth plus one third?", ["7/12", "SEVEN TWELFTHS", "SEVEN OVER TWELVE", "712", "712s"]),
         Question("In doing research, you may see such phrases as 'see' or 'see also.' What are these phrases that refer you to other topics?", ["CROSS-REFERENCES", "CROSS-REFERENCE", "CROSS REFERENCES", "CROSS REFERENCE"]),
         Question("The atmosphere of the earth is made up of about 20 percent oxygen, 1 percent of trace gases, and 79 percent of what other gas?", ["NITROGEN"]),
         Question("Identify the ancient wind instrument on which the performer blows into a pipe leading to a windbag into which air is squeezed into reed pipes. It is most popular in Scotland.", ["BAGPIPE", "BAGPIPES"]),
         Question("What is the area of a square which has a perimeter of 4 feet?", ["ONE SQUARE FOOT", "ONE FOOT SQUARED"]),
-        Question("The Pacific and Atlantic Oceans are the two largest bodies of water on the surface of the Earth. What is the third largest body of water?", ["INDIAN OCEAN"])
+        Question("The Pacific and Atlantic Oceans are the two largest bodies of water on the surface of the Earth. What is the third largest body of water?", ["INDIAN OCEAN", "THE INDIAN OCEAN"])
         
     ]
     

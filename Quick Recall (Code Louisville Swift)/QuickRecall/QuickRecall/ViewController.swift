@@ -104,9 +104,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
             
             microphoneButton.setTitle("BUZZ", for: .normal)
             questionReader.read()
-            if questionLabel.isHidden == true {
-                questionLabel.isHidden = false
-            }
+            //if questionLabel.isHidden == true {
+                //questionLabel.isHidden = false
+            //}
             if startButton.isHidden == false {
                 startButton.isHidden = true
             }
@@ -123,11 +123,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
             //questionReader.read()
             practiceStarted = .afterBuzzed
             
-            
         }
-
-        
-        
         
         if audioEngine.isRunning {
             audioEngine.stop()
@@ -254,6 +250,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         switch self.currentQuestion.checkAnswer(for: self.playerAnswer) {
             case true: self.correctOrIncorrectLabel.text = "Correct!"
             case false:self.correctOrIncorrectLabel.text = "Incorrect"
+            print(textView.text)
         }
         
         practiceStarted = QuestionState.afterBuzzed
@@ -281,9 +278,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         if microphoneButton.isHidden == true {
             microphoneButton.isHidden = false
         }
-        if questionLabel.isHidden == true {
-            questionLabel.isHidden = false
-        }
+        //if questionLabel.isHidden == true {
+            //questionLabel.isHidden = false
+        //}
         if startButton.isHidden == false {
             startButton.isHidden = true
         }
