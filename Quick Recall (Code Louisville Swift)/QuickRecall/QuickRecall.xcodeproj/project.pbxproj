@@ -13,6 +13,7 @@
 		39091B221EDD140C00742477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39091B211EDD140C00742477 /* Assets.xcassets */; };
 		39091B251EDD140C00742477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39091B231EDD140C00742477 /* LaunchScreen.storyboard */; };
 		39091B2D1EDD177D00742477 /* QuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39091B2C1EDD177D00742477 /* QuestionProvider.swift */; };
+		3996FB041F1ECBCB00F72393 /* QuestionReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996FB031F1ECBCB00F72393 /* QuestionReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		39091B241EDD140C00742477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39091B261EDD140C00742477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39091B2C1EDD177D00742477 /* QuestionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionProvider.swift; sourceTree = "<group>"; };
+		3996FB031F1ECBCB00F72393 /* QuestionReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				39091B231EDD140C00742477 /* LaunchScreen.storyboard */,
 				39091B261EDD140C00742477 /* Info.plist */,
 				39091B2C1EDD177D00742477 /* QuestionProvider.swift */,
+				3996FB031F1ECBCB00F72393 /* QuestionReader.swift */,
 			);
 			path = QuickRecall;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				39091B1D1EDD140C00742477 /* ViewController.swift in Sources */,
 				39091B2D1EDD177D00742477 /* QuestionProvider.swift in Sources */,
+				3996FB041F1ECBCB00F72393 /* QuestionReader.swift in Sources */,
 				39091B1B1EDD140C00742477 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,12 +19,16 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     
+    @IBOutlet weak var testButton: UIButton!
+    
+    
     let questionProvider = QuestionProvider()
     var currentQuestion: Question = Question("", [""])
     var questionNumber: Int = 1
     var playerAnswer = ""
     var countdownTimer: Timer!
     var totalTime = 3
+    let questionReader = QuestionReader()
     
     enum QuestionState {
         case beforeStarted
@@ -35,6 +39,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
     var practiceStarted = QuestionState.beforeStarted
     
     var speechSynthesizer = AVSpeechSynthesizer()
+    var currentUtterance: AVSpeechUtterance = AVSpeechUtterance(string: "")
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
@@ -48,6 +53,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         
         currentQuestion = questionProvider.randomQuestion()
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
+        questionReader.newUtterance(from: questionLabel.text!)
         
         microphoneButton.isEnabled = false
         speechRecognizer.delegate = self
@@ -94,16 +100,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         
-        //speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
-        
         if practiceStarted != .beforeBuzzed {
-            let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
             
-            speechSynthesizer.speak(speechUtterance)
+            questionReader.read()
             
         }
 
         if practiceStarted == .beforeStarted {
+            
             microphoneButton.setTitle("BUZZ", for: .normal)
             
             if questionLabel.isHidden == true {
@@ -113,13 +117,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
                 startButton.isHidden = true
             }
             
-            //let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
-            
-            //speechSynthesizer.speak(speechUtterance)
-            
             practiceStarted = .beforeBuzzed
             return
-            
         }
         
         if practiceStarted == .afterBuzzed {
@@ -169,7 +168,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(AVAudioSessionCategoryRecord)
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
             try audioSession.setMode(AVAudioSessionModeMeasurement)
             try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
         } catch {
@@ -287,7 +286,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         currentQuestion = questionProvider.randomQuestion()
         questionNumber += 1
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
-        
+        questionReader.newUtterance(from: questionLabel.text!)
         
     }
     
@@ -302,16 +301,18 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
             startButton.isHidden = true
         }
         
-        let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
+        //let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
         
-        speechSynthesizer.speak(speechUtterance)
+        //speechSynthesizer.speak(speechUtterance)
         
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        print("Did finish!!")
     }
-
+    
+    //func newUtterance(from textString: String) -> AVSpeechUtterance {
+        //return AVSpeechUtterance(string: textString)
+    //}
     
 }
 
