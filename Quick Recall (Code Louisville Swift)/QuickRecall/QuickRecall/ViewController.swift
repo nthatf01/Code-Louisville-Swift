@@ -219,6 +219,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
     }
     
     func startTimer() {
+        
+        microphoneButton.isEnabled = false
+        
         if timerLabel.isHidden == true {
             timerLabel.isHidden = false
         }
@@ -254,7 +257,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         }
         
         practiceStarted = QuestionState.afterBuzzed
-        //updateQuestion()
+        microphoneButton.isEnabled = true
         countdownTimer.invalidate()
     }
     
