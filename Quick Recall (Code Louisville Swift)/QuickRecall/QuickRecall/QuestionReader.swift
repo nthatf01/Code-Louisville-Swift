@@ -28,4 +28,16 @@ class QuestionReader {
     func unpause() {
         self.speechSynthesizer.continueSpeaking()
     }
+    
+    func stopReading() {
+        self.speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
+    
+    func isReading() -> Bool {
+        if speechSynthesizer.isSpeaking == true {
+            return true
+        } else {
+            return false
+        }
+    }
 }

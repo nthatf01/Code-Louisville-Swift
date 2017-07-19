@@ -123,6 +123,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
             
         }
         
+        if questionReader.isReading() == true {
+            questionReader.stopReading()
+        }
+        
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
