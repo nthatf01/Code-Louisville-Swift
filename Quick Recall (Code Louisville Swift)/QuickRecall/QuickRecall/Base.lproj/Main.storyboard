@@ -51,15 +51,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qt-eZ-9cq">
-                                <rect key="frame" x="0.0" y="108" width="320" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="START"/>
-                                <connections>
-                                    <action selector="startPractice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ue7-0S-hlS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbB-1Z-K1p" userLabel="microphoneButton">
                                 <rect key="frame" x="0.0" y="225" width="320" height="30"/>
                                 <color key="backgroundColor" red="0.99229452393879825" green="1" blue="0.62737634153997535" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -86,7 +77,6 @@
                         <outlet property="correctOrIncorrectLabel" destination="edO-cr-gwK" id="jEl-zD-H9K"/>
                         <outlet property="microphoneButton" destination="QbB-1Z-K1p" id="ovs-ZM-oZ8"/>
                         <outlet property="questionLabel" destination="mcE-rt-vGL" id="zqF-rq-oLl"/>
-                        <outlet property="startButton" destination="1qt-eZ-9cq" id="WJD-4x-A6D"/>
                         <outlet property="textView" destination="9KR-Yz-otS" id="F2m-rM-X0c"/>
                         <outlet property="timerLabel" destination="aZJ-N9-9jm" id="7if-M3-T5j"/>
                     </connections>

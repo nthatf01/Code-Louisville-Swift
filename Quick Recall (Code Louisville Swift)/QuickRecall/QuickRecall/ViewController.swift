@@ -107,9 +107,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
             //if questionLabel.isHidden == true {
                 //questionLabel.isHidden = false
             //}
-            if startButton.isHidden == false {
-                startButton.isHidden = true
-            }
             
             practiceStarted = .beforeBuzzed
             return
@@ -272,23 +269,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
         questionReader.newUtterance(from: questionLabel.text!)
         questionReader.read()
-        
-    }
-    
-    @IBAction func startPractice(_ sender: Any) {
-        if microphoneButton.isHidden == true {
-            microphoneButton.isHidden = false
-        }
-        //if questionLabel.isHidden == true {
-            //questionLabel.isHidden = false
-        //}
-        if startButton.isHidden == false {
-            startButton.isHidden = true
-        }
-        
-        //let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
-        
-        //speechSynthesizer.speak(speechUtterance)
         
     }
     
