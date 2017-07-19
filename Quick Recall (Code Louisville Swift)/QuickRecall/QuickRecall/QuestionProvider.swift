@@ -63,7 +63,17 @@ struct QuestionProvider {
         Question("Name the highest court in the United States.", ["SUPREME COURT", "THE SUPREME COURT", "SUPREME"]),
         Question("In what U.S. city is the Willis Tower located?", ["CHICAGO", "CHICAGO, ILLINOIS", "CHICAGO, IL"]),
         Question("Locate the linking verb in the following sentence: Every motion is perfect.", ["IS"]),
-        Question("Arrange the following from smallest to largest: one third, one sixth, one fourth, one eighth.", ["1/8, 1/6, 1/4, 1/3", "ONE EIGHTH ONE SIXTH ONE FOURTH ONE THIRD"])
+        Question("Arrange the following from smallest to largest: one third, one sixth, one fourth, one eighth.", ["1/8, 1/6, 1/4, 1/3", "ONE EIGHTH ONE SIXTH ONE FOURTH ONE THIRD"]),
+        Question("These American colonial forces were said to be ready at a moment's notice.  What was the name given to these original American soldiers?", ["MINUTE MEN"]),
+        Question("The assassination of Austria's Archduke Franz Ferdinand was the spark that started what war?", ["WORLD WAR I", "WWI", "WORLD WAR ONE", "THE FIRST WORLD WAR", "FIRST WORLD WAR"]),
+        Question("Name the pair of fist-sized organs that filter waste products from the bloodstream of humans.", ["KIDNEYS", "THE KIDNEYS"]),
+        Question("Name the three primary colors in art", ["RED BLUE YELLOW", "RED, BLUE, YELLOW", "RED BLUE AND YELLOW", "RED, BLUE, AND YELLOW", "RED YELLOW BLUE", "RED, YELLOW, BLUE", "RED YELLOW AND BLUE", "RED, YELLOW, AND BLUE" ,"BLUE RED YELLOW", "BLUE, RED, YELLOW", "BLUE RED AND YELLOW", "BLUE, RED, AND YELLOW", "BLUE YELLOW RED", "BLUE, YELLOW, RED", "BLUE YELLOW AND RED", "BLUE, YELLOW, AND RED", "YELLOW RED BLUE", "YELLOW, RED, BLUE", "YELLOW RED AND BLUE", "YELLOW, RED, AND BLUE", "YELLOW BLUE RED", "YELLOW, BLUE, RED", "YELLOW BLUE AND RED", "YELLOW, BLUE, AND RED"]),
+        Question("The House of Burgesses was established in which colony in 1619?", ["VIRGINIA", "VA"]),
+        Question("Most people just love February 14th.  What celebration falls on this day?", ["VALENTINE'S", "VALENTINES", "VALENTINE'S DAY", "VALENTINES DAY", "ST. VALENTINE'S", "ST. VALENTINES", "ST. VALENTINE'S DAY", "ST. VALENTINES DAY"]),
+        Question("If the store is 2.5 miles from your house, how far would you drive if you made 4 round trips?", ["20 MILES", "TWENTY MILES"]),
+        Question("Typical Plains Indians were wanderers, moving from place to place.  What is the name beginning with the letter 'N' given to these Indians who had no fixed location for their village?", ["NOMADS", "NOMAD"]),
+        Question("William McKinley, the 25th U.S. President, was born in Ohio.  What is the capital of Ohio?", ["COLUMBUS"]),
+        Question("Arnold was a very unpromising child but he grew up to become a very handsome and successful man.  Name the Hans Christian Andersen fairy tale that tells a story similar to Arnold's.", ["UGLY DUCKLING", "THE UGLY DUCKLING"])
         
     ]
     
