@@ -100,16 +100,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         
-        if practiceStarted != .beforeBuzzed {
-            
-            questionReader.read()
-            
-        }
-
         if practiceStarted == .beforeStarted {
             
             microphoneButton.setTitle("BUZZ", for: .normal)
-            
+            questionReader.read()
             if questionLabel.isHidden == true {
                 questionLabel.isHidden = false
             }
@@ -119,32 +113,21 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
             
             practiceStarted = .beforeBuzzed
             return
-        }
-        
-        if practiceStarted == .afterBuzzed {
+        } else if practiceStarted == .afterBuzzed {
             updateQuestion()
-            
-            //let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
-            
-            //if !speechSynthesizer.isSpeaking {
-                //let speechUtterance = AVSpeechUtterance(string: questionLabel.text!)
-                //speechUtterance.rate = rate
-                //speechUtterance.pitchMultiplier = pitch
-                //speechUtterance.volume = volume
-                
-                //speechSynthesizer.speak(speechUtterance)
-            //}
-            //else{
-                
-                //speechSynthesizer.continueSpeaking()
-            //}
-            
-            //speechSynthesizer.speak(speechUtterance)
-            
             practiceStarted = .beforeBuzzed
             microphoneButton.setTitle("BUZZ", for: .normal)
             return
+        } else if practiceStarted == .beforeBuzzed {
+            
+            //questionReader.read()
+            practiceStarted = .afterBuzzed
+            
+            
         }
+
+        
+        
         
         if audioEngine.isRunning {
             audioEngine.stop()
@@ -287,6 +270,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         questionNumber += 1
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
         questionReader.newUtterance(from: questionLabel.text!)
+        questionReader.read()
         
     }
     
@@ -310,9 +294,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
     }
     
-    //func newUtterance(from textString: String) -> AVSpeechUtterance {
-        //return AVSpeechUtterance(string: textString)
-    //}
     
 }
 
