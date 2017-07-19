@@ -115,6 +115,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
             return
         } else if practiceStarted == .afterBuzzed {
             updateQuestion()
+            correctOrIncorrectLabel.isHidden = true
             practiceStarted = .beforeBuzzed
             microphoneButton.setTitle("BUZZ", for: .normal)
             return
