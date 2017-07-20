@@ -5,6 +5,7 @@
 //  Created by Nathaniel Hatfield on 5/29/17.
 //  Copyright © 2017 Nathaniel Hatfield. All rights reserved.
 //
+//  Sound effects by Bertrof at https://freesound.org/people/Bertrof/
 
 import UIKit
 import Speech
@@ -50,8 +51,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
     
     var soundPlayer : AVAudioPlayer?
     
-    func playSound(){
-        let path = Bundle.main.path(forResource: "correct", ofType:"wav")!
+    func playSound(_ sound: String){
+        let path = Bundle.main.path(forResource: sound, ofType:"wav")!
         let url = URL(fileURLWithPath: path)
         
         do {
@@ -271,9 +272,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         switch self.currentQuestion.checkAnswer(for: self.playerAnswer) {
             case true:
                 self.correctOrIncorrectLabel.text = "Correct!"
-                self.playSound()
+                self.playSound("correct")
             case false:
                 self.correctOrIncorrectLabel.text = "Incorrect"
+                self.playSound("incorrect")
             print(textView.text)
         }
         
