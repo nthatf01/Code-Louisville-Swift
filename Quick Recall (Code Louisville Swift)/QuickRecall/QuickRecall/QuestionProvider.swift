@@ -44,7 +44,7 @@ struct QuestionProvider {
         Question("Identify the American butterfly remarkable not only for its size and coloration, but for its ability to undertake long migrations.", ["MONARCH", "MONARCHS", "MONARCH BUTTERFLY", "MONARCH BUTTERFLIES"]),
         Question("World War One was known as The Great War, or The World War, until what event occurred?", ["WORLD WAR II", "WWII", "WORLD WAR TWO"]),
         Question("Paganini was a great Italian composer and musician. Name either of the two musical instruments on which he excelled.", ["PIANO", "VIOLIN"]),
-        Question("Nate and Miranda were tiling a square kitchen floor using tiles measuring 1 foot by 1 foot. If they used 81 tiles, what are the dimensions of the floor?", ["NINE FEET BY NINE FEET", "9' x 9'", "9 X 9", "9 BY 9"]),
+        Question("Nate and Miranda were tiling a square kitchen floor using tiles measuring 1 foot by 1 foot. If they used 81 tiles, what are the dimensions of the floor?", ["NINE FEET BY NINE FEET", "9' X 9'", "9 X 9", "9 BY 9"]),
         Question("How many states have the Mississippi River as part of their border?", ["10", "TEN"]),
         Question("What is one fourth plus one third?", ["7/12", "SEVEN TWELFTHS", "SEVEN OVER TWELVE", "712", "712s"]),
         Question("In doing research, you may see such phrases as 'see' or 'see also.' What are these phrases that refer you to other topics?", ["CROSS-REFERENCES", "CROSS-REFERENCE", "CROSS REFERENCES", "CROSS REFERENCE"]),
@@ -66,7 +66,15 @@ struct QuestionProvider {
         Question("If the store is 2.5 miles from your house, how far would you drive if you made 4 round trips?", ["20 MILES", "TWENTY MILES"]),
         Question("Typical Plains Indians were wanderers, moving from place to place.  What is the name beginning with the letter 'N' given to these Indians who had no fixed location for their village?", ["NOMADS", "NOMAD"]),
         Question("William McKinley, the 25th U.S. President, was born in Ohio.  What is the capital of Ohio?", ["COLUMBUS"]),
-        Question("Arnold was a very unpromising child but he grew up to become a very handsome and successful man.  Name the Hans Christian Andersen fairy tale that tells a story similar to Arnold's.", ["UGLY DUCKLING", "THE UGLY DUCKLING"])
+        Question("Arnold was a very unpromising child but he grew up to become a very handsome and successful man.  Name the Hans Christian Andersen fairy tale that tells a story similar to Arnold's.", ["UGLY DUCKLING", "THE UGLY DUCKLING"]),
+        Question("First and last name please. Name the literary character who was surprised to find another person's footprints on his island beach. He is the title character in a novel by Daniel Defoe.", ["ROBINSON CRUSOE"]),
+        Question("How many instruments are there in a string quartet?", ["4", "FOUR"]),
+        Question("In Roman mythology, identify the god of fire and metal working. His name also describes the planet of Mr. Spock on the old T.V. show 'Star Trek.'", ["VULCAN"]),
+        Question("Some poets enjoy writing poetry which is humorous or funny. Identify the poet who wrote the book of funny poems called WHERE THE SIDEWALK ENDS.", ["SHEL SILVERSTEIN", "SILVERSTEIN"]),
+        Question("Near what major city in central Florida beginning with the letter 'O' is Walt Disney World located?", ["ORLANDO", "ORLANDO, FLORIDA", "ORLANDO, FL"]),
+        Question("Name this mark that looks like a comma but is placed above a word to show possession and to take the place of letters in a contraction?", ["APOSTROPHE", "AN APOSTROPHE"]),
+        Question("One-third times the area of the base times the height is the formula for finding the volume of what three-dimensional figure?", ["PYRAMID", "PYRAMIDS", "CONE", "CONES", "PYRAMID AND CONE", "PYRAMIDS AND CONES", "CONE AND PYRAMID", "CONES AND PYRAMIDS"]),
+        Question("What is the area of a square which has a perimeter of 16 feet?", ["16 FT.²", "16 SQUARE FEET", "SIXTEEN SQUARE FEET", "SIXTEEN FEET SQUARED"])
         
     ]
     
