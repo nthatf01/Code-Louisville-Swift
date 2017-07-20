@@ -76,6 +76,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         textView.layer.cornerRadius = 10
         textView.clipsToBounds = true
         
+        
+        // Round the corners of the timer label
         timerLabel.frame = CGRect(x: 40, y: 40, width: 48, height: 48)
         timerLabel.layer.cornerRadius = 0.5 * timerLabel.bounds.size.width
         timerLabel.clipsToBounds = true

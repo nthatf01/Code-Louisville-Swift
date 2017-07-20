@@ -84,8 +84,19 @@ struct QuestionProvider {
         Question("What is the name given to groups of stars which appear to maintain a certain pattern over many years? Draco and Ursa Major are examples.", ["CONSTELLATIONS", "CONSTELLATION"]),
         Question("Change three fifths to a percent.", ["60", "SIXTY", "60%", "SIXTY PERCENT"]),
         Question("Water from hot springs sometimes erupts at the surface of the earth. 'Old Faithful' in Yellowstone National Park is one of these hot springs. What is the name of these springs?", ["GEYSER", "GEYSERS"]),
-        Question("Identify the layer of the earth below the crust.", ["MANTLE", "THE MANTLE"])
-        
+        Question("Identify the layer of the earth below the crust.", ["MANTLE", "THE MANTLE"]),
+        Question("First and last names, please! Name the Academy Award-winning actor, the star of BIG, FORREST GUMP and APOLLO 13.", ["TOM HANKS"]),
+        Question("In baseball, what is the slang term for a left-handed pitcher? Part of this term is a cardinal direction.", ["SOUTHPAW", "SOUTH PAW"]),
+        Question("Identify the French impressionist artist who painted HAYSTACKS, WATERLILIES, and IMPRESSION: SUNRISE.", ["MONET", "CLAUDE MONET"]),
+        Question("According to the headmaster, professors of this subject tend to last for only one year. The teaching position was supposedly cursed by an evil wizard when he visited the school. What is this magical subject taught at Hogwarts School of Witchcraft and Wizardry in J.K. Rowling's Harry Potter series?", ["DEFENSE AGAINST THE DARK ARTS"]),
+        Question("First and last please. At age fourteen, this author ran away from home after a difficult childhood living with his alcoholic parents. He traveled with a carnival for a while and held many odd jobs before settling into writing. Name the author of HATCHET.", ["GARY PAULSEN"]),
+        Question("In the novel HATCHET, Brian cut through the aluminum body of the submerged plane with his hatchet in order to get what from the aircraft?", ["SURVIVAL PACK", "SURVIVIAL BAG", "SURVIVAL KIT"]),
+        Question("Who is the author of DEENIE, TIGER EYES, and the ever-popular FUDGE series?", ["JUDY BLUME", "BLUME"]),
+        Question("What is the six letter term for the direct exchange or trade of one good for another, without the use of money?", ["BARTER"]),
+        Question("What is the value of six in the number seventy six thousand five hundred ninety-three?", ["SIX THOUSAND", "6,000"]),
+        Question("Identify the weapon that was developed during World War Two that was dropped on Hiroshima in an attempt to end the war.", ["ATOMIC BOMB", "NUCLEAR BOMB"]),
+        Question("Members of a race of mythical giants which had only a single grotesque eye in the middle of their foreheads were known as what?", ["CYCLOPS"]),
+        Question("What phrase from THE ARABIAN NIGHTS does Ali Baba use to gain entrance to the thieves' cave?", ["OPEN SESAME"])
         
     ]
     
