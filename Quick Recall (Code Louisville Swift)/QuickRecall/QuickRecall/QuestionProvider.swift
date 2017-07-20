@@ -74,7 +74,18 @@ struct QuestionProvider {
         Question("Near what major city in central Florida beginning with the letter 'O' is Walt Disney World located?", ["ORLANDO", "ORLANDO, FLORIDA", "ORLANDO, FL"]),
         Question("Name this mark that looks like a comma but is placed above a word to show possession and to take the place of letters in a contraction?", ["APOSTROPHE", "AN APOSTROPHE", "'"]),
         Question("One-third times the area of the base times the height is the formula for finding the volume of what three-dimensional figure?", ["PYRAMID", "PYRAMIDS", "CONE", "CONES", "PYRAMID AND CONE", "PYRAMIDS AND CONES", "CONE AND PYRAMID", "CONES AND PYRAMIDS"]),
-        Question("What is the area of a square which has a perimeter of 16 feet?", ["16 FT.²", "16 SQUARE FEET", "SIXTEEN SQUARE FEET", "SIXTEEN FEET SQUARED"])
+        Question("What is the area of a square which has a perimeter of 16 feet?", ["16 FT.²", "16 SQUARE FEET", "SIXTEEN SQUARE FEET", "SIXTEEN FEET SQUARED"]),
+        Question("A kind of animal group in which each member has a different job is known by what name? Ants live in this type of group.", ["COLONY", "COLONIES", "A COLONY"]),
+        Question("He was a famous artist who painted elongated figures and used deep contrasting colors. Identify the artist whose name means 'the Greek.'", ["EL GRECO", "EL GRECO DOMENIKOS< THEOTOKOPOULOS"]),
+        Question("John measured the radius of a circle and found it to be 8 inches. What is the diameter of this circle?", ["16 INCHES", "SIXTEEN INCHES", "16''"]),
+        Question("Picasso's paintings can be divided into the three 'color' periods. Name two of them.", ["BLUE, PINK", "BLUE PINK", "BLUE, RED", "BLUE RED", "BLUE, ROSE", "BLUE ROSE", "BLUE, NEGRO", "BLUE NEGRO", "BLUE AND PINK", "BLUE AND RED", "BLUE AND ROSE", "BLUE AND NEGRO", "PINK, BLUE", "PINK BLUE", "PINK, NEGRO", "PINK NEGRO", "RED, BLUE", "RED BLUE", "RED, NEGRO", "RED NEGRO", "ROSE, BLUE", "ROSE BLUE", "ROSE, NEGRO", "ROSE NEGRO", "NEGRO, BLUE", "NEGRO BLUE", "NEGRO, PINK", "NEGRO PINK", "NEGRO, RED", "NEGRO RED","NEGRO, ROSE", "NEGRO ROSE", "NEGRO AND BLUE", "NEGRO AND PINK", "NEGRO AND RED", "NEGRO AND ROSE"]),
+        Question("What unit of measurement is defined as 91.44% of one meter?", ["YARD", "A YARD"]),
+        Question("How many chambers are there in the human heart?", ["FOUR", "4"]),
+        Question("What is the name given to groups of stars which appear to maintain a certain pattern over many years? Draco and Ursa Major are examples.", ["CONSTELLATIONS", "CONSTELLATION"]),
+        Question("Change three fifths to a percent.", ["60", "SIXTY", "60%", "SIXTY PERCENT"]),
+        Question("Water from hot springs sometimes erupts at the surface of the earth. 'Old Faithful' in Yellowstone National Park is one of these hot springs. What is the name of these springs?", ["GEYSER", "GEYSERS"]),
+        Question("Identify the layer of the earth below the crust.", ["MANTLE", "THE MANTLE"])
+        
         
     ]
     
