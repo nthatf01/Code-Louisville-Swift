@@ -23,23 +23,16 @@ class Question {
         for answer in self.answers {
             if playerAnswer.uppercased() == answer {
                 return true
-            } //else {
-                //return false
-            //}
+            } 
         }
         
-        /*if playerAnswer.uppercased() == self.answers[0] {
-            return true
-        } else {
-            return false
-        }*/
         return false
     }
 }
 
 struct QuestionProvider {
     let questions: [Question] = [
-        Question("What is the area in square feet of a rectangle with sides measuring 12 inches and 3 feet?", ["3", "3 SQUARE FEET", "THREE", "THREE SQUARE FEET"]),
+        Question("What is the area in square feet of a rectangle with sides measuring 12 inches and 3 feet?", ["3", "3 SQUARE FEET", "THREE", "THREE SQUARE FEET", "3 FT.²"]),
         Question("Dudley wanted to paint his room. The area of the room was 180 square meters. If one gallon of paint covers 60 square meters, how much paint does he need?", ["3 GALLONS", "THREE GALLONS"]),
         Question("What is the earth's galaxy called?", ["MILKY WAY", "MILKY WAY GALAXY", "THE MILKY WAY", "THE MILKY WAY GALAXY"]),
         Question("Shakespeare wrote three basic types of plays. One category was histories. Name the other two.", ["COMEDIES AND TRAGEDIES", "TRAGEDIES AND COMEDIES", "COMEDY AND TRAGEDY", "TRAGEDY AND COMEDY"]),
@@ -51,7 +44,7 @@ struct QuestionProvider {
         Question("Identify the American butterfly remarkable not only for its size and coloration, but for its ability to undertake long migrations.", ["MONARCH", "MONARCHS", "MONARCH BUTTERFLY", "MONARCH BUTTERFLIES"]),
         Question("World War One was known as The Great War, or The World War, until what event occurred?", ["WORLD WAR II", "WWII", "WORLD WAR TWO"]),
         Question("Paganini was a great Italian composer and musician. Name either of the two musical instruments on which he excelled.", ["PIANO", "VIOLIN"]),
-        Question("Nate and Miranda were tiling a square kitchen floor using tiles measuring 1 foot by 1 foot. If they used 81 tiles, what are the dimensions of the floor?", ["NINE FEET BY NINE FEET", "9' x 9'", "9 x 9", "9 BY 9"]),
+        Question("Nate and Miranda were tiling a square kitchen floor using tiles measuring 1 foot by 1 foot. If they used 81 tiles, what are the dimensions of the floor?", ["NINE FEET BY NINE FEET", "9' x 9'", "9 X 9", "9 BY 9"]),
         Question("How many states have the Mississippi River as part of their border?", ["10", "TEN"]),
         Question("What is one fourth plus one third?", ["7/12", "SEVEN TWELFTHS", "SEVEN OVER TWELVE", "712", "712s"]),
         Question("In doing research, you may see such phrases as 'see' or 'see also.' What are these phrases that refer you to other topics?", ["CROSS-REFERENCES", "CROSS-REFERENCE", "CROSS REFERENCES", "CROSS REFERENCE"]),

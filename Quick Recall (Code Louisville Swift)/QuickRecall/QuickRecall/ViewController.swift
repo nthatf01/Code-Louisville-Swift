@@ -8,6 +8,7 @@
 
 import UIKit
 import Speech
+import AudioToolbox
 
 class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynthesizerDelegate {
 
@@ -46,6 +47,24 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
+    
+    var soundPlayer : AVAudioPlayer?
+    
+    func playSound(){
+        let path = Bundle.main.path(forResource: "correct", ofType:"wav")!
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            self.soundPlayer = sound
+            sound.numberOfLoops = 0
+            sound.prepareToPlay()
+            sound.play()
+        } catch {
+            print("error loading file")
+            // couldn't load file :(
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -250,8 +269,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
             correctOrIncorrectLabel.isHidden = false
         }
         switch self.currentQuestion.checkAnswer(for: self.playerAnswer) {
-            case true: self.correctOrIncorrectLabel.text = "Correct!"
-            case false:self.correctOrIncorrectLabel.text = "Incorrect"
+            case true:
+                self.correctOrIncorrectLabel.text = "Correct!"
+                self.playSound()
+            case false:
+                self.correctOrIncorrectLabel.text = "Incorrect"
             print(textView.text)
         }
         
