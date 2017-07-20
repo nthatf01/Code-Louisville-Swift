@@ -64,14 +64,14 @@
 			children = (
 				39091B1A1EDD140C00742477 /* AppDelegate.swift */,
 				39091B1C1EDD140C00742477 /* ViewController.swift */,
+				39091B2C1EDD177D00742477 /* QuestionProvider.swift */,
+				3996FB031F1ECBCB00F72393 /* QuestionReader.swift */,
 				39091B1E1EDD140C00742477 /* Main.storyboard */,
 				39091B211EDD140C00742477 /* Assets.xcassets */,
 				39091B231EDD140C00742477 /* LaunchScreen.storyboard */,
-				3996FB091F2042DB00F72393 /* correct.wav */,
 				39091B261EDD140C00742477 /* Info.plist */,
+				3996FB091F2042DB00F72393 /* correct.wav */,
 				3996FB0B1F20465C00F72393 /* incorrect.wav */,
-				39091B2C1EDD177D00742477 /* QuestionProvider.swift */,
-				3996FB031F1ECBCB00F72393 /* QuestionReader.swift */,
 			);
 			path = QuickRecall;
 			sourceTree = "<group>";
