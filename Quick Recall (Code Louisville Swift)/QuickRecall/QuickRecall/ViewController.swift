@@ -71,6 +71,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynt
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        // Round the corners of the player's speech bubble
+        textView.layer.cornerRadius = 10
+        textView.clipsToBounds = true
+        
+        timerLabel.frame = CGRect(x: 40, y: 40, width: 48, height: 48)
+        timerLabel.layer.cornerRadius = 0.5 * timerLabel.bounds.size.width
+        timerLabel.clipsToBounds = true
+        
         currentQuestion = questionProvider.randomQuestion()
         questionLabel.text = "Question \(questionNumber): \(currentQuestion.clue)"
         questionReader.newUtterance(from: questionLabel.text!)
